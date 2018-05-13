@@ -4,9 +4,9 @@ This script find dublicated files in folder.
 
 #How it works
 
-for works this script you must ti do:
-```python
-C:\Users\svobodinang\AppData\Local\Programs\Python\Python36\python.exe duplicates.py C:\Users\svobodinang\Pictures\test
+for works this script you must to do:
+```bash python
+C:\Users\svobodinang\Desktop\Python\8_vk_friends_online> duplicates.py C:\Users\svobodinang\Pictures\test
 Дубликаты:
 ['1.txt']
 ```
