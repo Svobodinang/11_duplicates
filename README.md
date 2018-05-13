@@ -1,6 +1,15 @@
 # Anti-Duplicator
 
-[TODO. There will be project description]
+This script find dublicated files in folder.
+
+#How it works
+
+for works this script you must ti do:
+```python
+C:\Users\svobodinang\AppData\Local\Programs\Python\Python36\python.exe duplicates.py C:\Users\svobodinang\Pictures\test
+Дубликаты:
+['1.txt']
+```
 
 # Project Goals
 
