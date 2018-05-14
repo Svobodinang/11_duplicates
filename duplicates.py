@@ -9,7 +9,7 @@ def find_all_files(filepath):
     os.chdir(filepath)
     for path in os.listdir(filepath):
         if not os.path.isfile(path):
-            find_all_files(filepath +'\\'+ path)
+            find_all_files(filepath + '\\' + path)
         else:
             files.append(path)
 
@@ -17,9 +17,9 @@ def find_all_files(filepath):
 def find_dublicates():
     dubl_files = []
     used_file = ''
-    for index in range(0, len(files) - 1):
+    for index in range(len(files) - 1):
         for index_dubl in range(index + 1, len(files) - 1):
-            if files[index] == files[index_dubl] and files[index]!=used_file:
+            if files[index] == files[index_dubl] and files[index] != used_file:
                 dubl_files.append(files[index])
                 used_file = files[index]
     return dubl_files
