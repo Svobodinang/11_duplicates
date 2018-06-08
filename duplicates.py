@@ -6,20 +6,20 @@ import collections
 def find_all_files(filepath):
     tree = os.walk(filepath)
     files = []
-    for arg in tree:
-        for file in arg[2]:
-            files.append(file)
+    for argumen in tree:
+        for file_name in argumen[2]:
+            files.append(file_name)
     return files
 
 
 def find_dublicates(files):
     dublicates = []
     count_mas = collections.Counter()
-    for file in files:
-        count_mas[file] += 1
-    for file in files:
-        if (count_mas[file] > 1) and (file not in dublicates):
-            dublicates.append(file)
+    for file_name in files:
+        count_mas[file_name] += 1
+    for file_name in files:
+        if (count_mas[file_name] > 1) and (file_name not in dublicates):
+            dublicates.append(file_name)
     return dublicates
 
 
