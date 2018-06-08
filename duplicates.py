@@ -24,13 +24,13 @@ def find_dublicates(files):
 
 
 def print_dublicates(dublicates):
-    print("Дубликаты: ")
+    print('Дубликаты: ')
     print(dublicates)
 
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        exit("Вы не ввели путь к папке")
+        exit('Вы не ввели путь к папке')
     filepath = sys.argv[1]
     files = find_all_files(filepath)
     dublicates = find_dublicates(files)
