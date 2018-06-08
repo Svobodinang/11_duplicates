@@ -11,6 +11,7 @@ def find_all_files(filepath):
             files.append(file)
     return files
 
+
 def find_dublicates(files):
     dublicates = []
     count_mas = collections.Counter()
@@ -20,6 +21,7 @@ def find_dublicates(files):
         if (count_mas[file] > 1) and (file not in dublicates):
             dublicates.append(file)
     return dublicates
+
 
 def print_dublicates(dublicates):
     print("Дубликаты: ")
