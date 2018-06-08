@@ -2,11 +2,11 @@
 
 This script find dublicated files in folder.
 
-#How it works
+# How it works
 
-for works this script you must to do:
+for works this script you must to do (You must specify the path to the folder)
 ```bash python
-C:\Users\svobodinang\Desktop\Python\8_vk_friends_online> duplicates.py C:\Users\svobodinang\Pictures\test
+C:\Users\svobodinang\Desktop\Python\8_vk_friends_online>python duplicates.py C:\Users\svobodinang\Pictures\test
 Дубликаты:
 ['1.txt']
 ```

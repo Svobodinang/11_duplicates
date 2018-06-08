@@ -1,37 +1,35 @@
 import os
 import sys
-
-
-files = []
+import collections
 
 
 def find_all_files(filepath):
-    os.chdir(filepath)
-    for path in os.listdir(filepath):
-        if not os.path.isfile(path):
-            find_all_files(filepath + '\\' + path)
-        else:
-            files.append(path)
+    tree = os.walk(filepath)
+    files = []
+    for arg in tree:
+        for file in arg[2]:
+            files.append(file)
+    return files
 
+def find_dublicates(files):
+    dublicates = []
+    count_mas = collections.Counter()
+    for file in files:
+        count_mas[file] += 1
+    for file in files:
+        if (count_mas[file] > 1) and (file not in dublicates):
+            dublicates.append(file)
+    return dublicates
 
-def find_dublicates():
-    dubl_files = []
-    used_file = ''
-    for index in range(len(files) - 1):
-        for index_dubl in range(index + 1, len(files) - 1):
-            if files[index] == files[index_dubl] and files[index] != used_file:
-                dubl_files.append(files[index])
-                used_file = files[index]
-    return dubl_files
-
-
-def print_dublicates(dubl_files):
+def print_dublicates(dublicates):
     print("Дубликаты: ")
-    print(dubl_files)
+    print(dublicates)
 
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        exit("Вы не ввели путь к папке")
     filepath = sys.argv[1]
-    find_all_files(filepath)
-    dubl_files = find_dublicates()
-    print_dublicates(dubl_files)
+    files = find_all_files(filepath)
+    dublicates = find_dublicates(files)
+    print_dublicates(dublicates)
