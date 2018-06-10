@@ -14,11 +14,9 @@ def find_all_files_in_filepath(filepath):
 
 def find_dublicates(paths_to_files):
     dublicates = collections.defaultdict(list)
-    path = 1
-    name = 0
-    for name in paths_to_files:
-        if len(paths_to_files[name]) > 1:
-            dublicates[name].append(paths_to_files[name])
+    for file_name in paths_to_files:
+        if len(paths_to_files[file_name]) > 1:
+            dublicates[file_name].append(paths_to_files[file_name])
     return dublicates
 
 
